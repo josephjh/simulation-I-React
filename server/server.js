@@ -20,10 +20,10 @@ massive(CONNECTION_STRING).then((dbInstance) => {
 })
 
 
-app.get('/api/all', ctrl.getAllMessages)
+app.get('/api/products', ctrl.getAllMessages)
 
-app.get('/api/message/:id', ctrl.getMessage)
+app.get('/api/products/:id', ctrl.getMessage)
 
-app.delete('/api/message/:id', ctrl.deleteMessage)
+app.delete('/api/products/:id', ctrl.deleteMessage)
 
-app.post('/api/message/', ctrl.newMessage)
+app.post('/api/products/', ctrl.newMessage)

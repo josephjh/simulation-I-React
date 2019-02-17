@@ -3,7 +3,8 @@ module.exports = {
         const dbInstance = req.app.get('db');
         const {name, img, price} = req.body;
         dbInstance.createMessage(name, img, price).then((response) => {
-            res.status(201).send(response)
+            console.log(response[0])
+            res.status(201).send(response[0])
         }).catch((err) => {
             console.log(err)
         })
@@ -29,9 +30,9 @@ module.exports = {
     deleteMessage: (req, res) => {
         const dbInstance = req.app.get('db');
         const {id} = req.params;
-        dbInstance.deleteMessage(id).then((response) => {
+        dbInstance.deleteMessage(id).then(() => {
             console.log('It got deleted');
-            res.sendStatus(200)
+            res.send(200)
         }).catch((err) => {
             console.log(err)
         })

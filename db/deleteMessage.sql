@@ -1,2 +1,2 @@
-delete from account
+delete from products
 where id = $1
